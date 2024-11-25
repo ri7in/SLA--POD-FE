@@ -12,9 +12,9 @@ import { CommonModule } from '@angular/common';
     <div class="dashboard-container">
       <div class="header">
         <h1>PROJECT OVERVIEW DASHBOARD (POD)</h1>
-        <img src="assets/srilankan-airlines-logo.png" alt="Sri Lankan Airlines" />
+        <img src="public/assets/srilankan-airlines-logo.png" alt="Sri Lankan Airlines" />
       </div>
-      
+      2
       <!-- Project Table Component -->
       <app-project-table [projects]="currentPageProjects" [currentPage]="currentPage"></app-project-table>
       
@@ -44,12 +44,43 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [`
     :host {
-      display: block;
-      background-color: #1a1a1a;
-      min-height: 100vh;
-      padding: 20px;
-      color: white;
-    }
+  display: block;
+  background-color: #2E2E2E;
+  min-height: 100vh;
+  color: white;
+  padding: 0; // Remove padding here
+}
+
+.dashboard-container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.header {
+  background: linear-gradient(90deg, #2E2E2E 0%, #000000 100%);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  color: #FFD700;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+img {
+  height: 40px;
+  width: auto;
+}
+
+// Rest of your styles remain the same...
 
     .dashboard-container {
       max-width: 1920px;
@@ -66,7 +97,7 @@ import { CommonModule } from '@angular/common';
     h1 {
       color: #FFD700;
       font-size: 24px;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     .statistics-section {
