@@ -1,0 +1,16 @@
+<div class="statistics-cards">
+    <div class="card" [@flipAnimation]="currentCard">
+      <div class="front" *ngIf="currentCard === 'lastWeek'">
+        <h3>Last Week Statistics</h3>
+        <p>Milestones: {{ lastWeekStats.milestones }}</p>
+        <p>Deliverables: {{ lastWeekStats.deliverables }}</p>
+        <p>Tasks Completed: {{ lastWeekStats.tasksCompleted }}</p>
+      </div>
+      <div class="back" *ngIf="currentCard === 'thisWeek'">
+        <h3>This Week Statistics</h3>
+        <p>Milestones: {{ thisWeekStats.milestones }}</p>
+        <p>Deliverables: {{ thisWeekStats.deliverables }}</p>
+        <p>Tasks Completed: {{ thisWeekStats.tasksCompleted }}</p>
+      </div>
+    </div>
+  </div>

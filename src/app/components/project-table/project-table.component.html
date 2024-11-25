@@ -1,0 +1,26 @@
+<table>
+    <thead>
+      <tr>
+        <th>Department</th>
+        <th>Project</th>
+        <th>Progress</th>
+        <th>Overdue</th>
+        <th>Start</th>
+        <th>Due</th>
+        <th>Issues</th>
+        <th>Risk</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td>{{ project.department }}</td>
+        <td>{{ project.name }}</td>
+        <td>{{ project.progress }}%</td>
+        <td>{{ project.overdue }}%</td>
+        <td>{{ project.start }}</td>
+        <td>{{ project.due }}</td>
+        <td>{{ project.issues }}</td>
+        <td>{{ project.risk }}</td>
+      </tr>
+    </tbody>
+  </table>

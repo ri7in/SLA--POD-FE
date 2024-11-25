@@ -1,0 +1,19 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #212121; // Matches the dark theme
+    color: white;
+  }
+  
+  .table-section {
+    flex: 3;
+    padding: 10px;
+  }
+  
+  .statistics-section {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
