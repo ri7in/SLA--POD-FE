@@ -1,19 +1,24 @@
-.dashboard {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-color: #212121; // Matches the dark theme
-    color: white;
-  }
-  
-  .table-section {
-    flex: 3;
-    padding: 10px;
-  }
-  
-  .statistics-section {
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-  }
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+}
+
+/* Container for the dashboard */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1d1d1d; /* Darker shade for the container */
+  border-radius: 8px;
+}
+
+/* Centering cards and table */
+.dashboard-container > * {
+  margin-bottom: 30px;
+}
