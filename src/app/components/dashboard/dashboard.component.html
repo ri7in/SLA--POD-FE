@@ -1,11 +1,7 @@
-<div class="dashboard">
-    <!-- Table Section -->
-    <div class="table-section">
-      <app-project-table></app-project-table>
-    </div>
-  
-    <!-- Statistics Section -->
-    <div class="statistics-section">
-      <app-statistics-cards></app-statistics-cards>
-    </div>
-  </div>
+<div class="dashboard-container">
+  <!-- Project Table Component -->
+  <app-project-table [projects]="projects"></app-project-table>
+
+  <!-- Statistics Cards Component -->
+  <app-statistics-cards></app-statistics-cards>
+</div>
