@@ -31,25 +31,25 @@ tr:last-child td {
   border-radius: 10px;
   position: relative;
   overflow: hidden;
-}
 
-.progress-fill {
-  height: 100%;
-  background: #4CAF50;
-  transition: width 0.3s ease;
-}
+  .progress-fill {
+    height: 100%;
+    background: #4CAF50;
+    transition: width 0.3s ease;
 
-.overdue .progress-fill {
-  background: #f44336;
-}
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 12px;
+    }
+  }
 
-.progress-bar span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 12px;
+  .overdue .progress-fill {
+    background: #f44336;
+  }
 }
 
 .risk-badge {
@@ -57,21 +57,40 @@ tr:last-child td {
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
+
+  &.high {
+    background: #f44336;
+    color: white;
+  }
+
+  &.med {
+    background: #ff9800;
+    color: white;
+  }
+
+  &.low {
+    background: #4CAF50;
+    color: white;
+  }
 }
 
-.risk-badge.high {
-  background: #f44336;
-  color: white;
-}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 
-.risk-badge.med {
-  background: #ff9800;
-  color: white;
-}
+  button {
+    background-color: #313435;
+    color: #FFFACD;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 4px;
+    cursor: pointer;
 
-.risk-badge.low {
-  background: #4CAF50;
-  color: white;
+    &.active {
+      background-color: #4CAF50;
+    }
+  }
 }
 
 @media (max-width: 768px) {

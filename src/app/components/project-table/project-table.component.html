@@ -1,4 +1,4 @@
-<table [@tableAnimation]="currentPage">
+<table>
   <thead>
     <tr>
       <th>DEPARTMENT</th>
@@ -12,25 +12,115 @@
     </tr>
   </thead>
   <tbody>
-    <ng-container *ngFor="let department of groupedProjects">
-      <ng-container *ngFor="let project of department.projects; let i = index">
-        <!-- Set row color based on risk -->
-        <tr [ngStyle]="{ 'background-color': getRowColor(i, department) }">
-          <td *ngIf="i === 0">{{ department.name }}</td> <!-- Only show department for the first project -->
-          <td *ngIf="i !== 0"></td> <!-- Empty for subsequent projects -->
-          <td>{{ project.name }}</td>
-          <td>{{ project.progress }}%</td>
-          <td>{{ project.overdue }}%</td>
-          <td>{{ project.start }}</td>
-          <td>{{ project.due }}</td>
-          <td>{{ project.issues }}</td>
-          <td>
-            <span [class]="'risk-badge ' + project.risk.toLowerCase()">
-              {{ project.risk }}
-            </span>
-          </td>
-        </tr>
-      </ng-container>
-    </ng-container>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td>Cabin Services</td>
+      <td>IBC RE Tool Modification</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Jan-15</td>
+      <td>Jun-30</td>
+      <td>90</td>
+      <td><span [class]="'risk-badge high'">High</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#313435' }">
+      <td></td>
+      <td>New Flight Operations System</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Oct-01</td>
+      <td>May-01</td>
+      <td>10</td>
+      <td><span [class]="'risk-badge med'">Med</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td></td>
+      <td>Baggage Handling Improvement Initiative</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Apr-05</td>
+      <td>Sep-15</td>
+      <td>20</td>
+      <td><span [class]="'risk-badge low'">Low</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#313435' }">
+      <td>Cargo</td>
+      <td>Safety Management System Update</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Mar-10</td>
+      <td>Jul-20</td>
+      <td>30</td>
+      <td><span [class]="'risk-badge low'">Low</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td></td>
+      <td>Employee Training And Development Plan</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Jun-01</td>
+      <td>Oct-01</td>
+      <td>40</td>
+      <td><span [class]="'risk-badge low'">Low</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#313435' }">
+      <td></td>
+      <td>Passenger Experience Optimization</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>May-20</td>
+      <td>Aug-30</td>
+      <td>40</td>
+      <td><span [class]="'risk-badge low'">Low</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td>Engineering And Corporate Safety</td>
+      <td>Onboard Service Quality Assessment</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Jul-15</td>
+      <td>Dec-01</td>
+      <td>30</td>
+      <td><span [class]="'risk-badge low'">Low</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#313435' }">
+      <td></td>
+      <td>Aircraft Maintenance Tracking System</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Dec-01</td>
+      <td>Jun-01</td>
+      <td>30</td>
+      <td><span [class]="'risk-badge med'">Med</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td>Finance</td>
+      <td>Marketing Campaign For Frequent Flyers</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Aug-10</td>
+      <td>Nov-30</td>
+      <td>30</td>
+      <td><span [class]="'risk-badge low'">Low</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#313435' }">
+      <td></td>
+      <td>In-Flight Connectivity Enhancement</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Sep-01</td>
+      <td>Jan-15</td>
+      <td>80</td>
+      <td><span [class]="'risk-badge high'">High</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td></td>
+      <td>Cargo Operations Performance Review</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Sep-20</td>
+      <td>Mar-15</td>
+      <td>10</td>
+      <td><span [class]="'risk-badge med'">Med</span></td>
+    </tr>
   </tbody>
 </table>
