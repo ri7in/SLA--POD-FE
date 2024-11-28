@@ -1,26 +1,36 @@
-<table>
+<table [@tableAnimation]="currentPage">
   <thead>
     <tr>
-      <th>Department</th>
-      <th>Project</th>
-      <th>Progress</th>
-      <th>Overdue</th>
-      <th>Start</th>
-      <th>Due</th>
-      <th>Issues</th>
-      <th>Risk</th>
+      <th>DEPARTMENT</th>
+      <th>PROJECT</th>
+      <th>PROGRESS</th>
+      <th>OVERDUE</th>
+      <th>START</th>
+      <th>DUE</th>
+      <th>ISSUES</th>
+      <th>RISK</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let project of projects">
-      <td>{{ project.department }}</td>
-      <td>{{ project.name }}</td>
-      <td>{{ project.progress }}%</td>
-      <td>{{ project.overdue }}%</td>
-      <td>{{ project.start }}</td>
-      <td>{{ project.due }}</td>
-      <td>{{ project.issues }}</td>
-      <td>{{ project.risk }}</td>
-    </tr>
+    <ng-container *ngFor="let department of groupedProjects">
+      <ng-container *ngFor="let project of department.projects; let i = index">
+        <!-- Set row color based on risk -->
+        <tr [ngStyle]="{ 'background-color': getRowColor(i, department) }">
+          <td *ngIf="i === 0">{{ department.name }}</td> <!-- Only show department for the first project -->
+          <td *ngIf="i !== 0"></td> <!-- Empty for subsequent projects -->
+          <td>{{ project.name }}</td>
+          <td>{{ project.progress }}%</td>
+          <td>{{ project.overdue }}%</td>
+          <td>{{ project.start }}</td>
+          <td>{{ project.due }}</td>
+          <td>{{ project.issues }}</td>
+          <td>
+            <span [class]="'risk-badge ' + project.risk.toLowerCase()">
+              {{ project.risk }}
+            </span>
+          </td>
+        </tr>
+      </ng-container>
+    </ng-container>
   </tbody>
 </table>
