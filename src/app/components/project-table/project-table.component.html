@@ -1,26 +1,126 @@
 <table>
   <thead>
     <tr>
-      <th>Department</th>
-      <th>Project</th>
-      <th>Progress</th>
-      <th>Overdue</th>
-      <th>Start</th>
-      <th>Due</th>
-      <th>Issues</th>
-      <th>Risk</th>
+      <th>DEPARTMENT</th>
+      <th>PROJECT</th>
+      <th>PROGRESS</th>
+      <th>OVERDUE</th>
+      <th>START</th>
+      <th>DUE</th>
+      <th>ISSUES</th>
+      <th>RISK</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let project of projects">
-      <td>{{ project.department }}</td>
-      <td>{{ project.name }}</td>
-      <td>{{ project.progress }}%</td>
-      <td>{{ project.overdue }}%</td>
-      <td>{{ project.start }}</td>
-      <td>{{ project.due }}</td>
-      <td>{{ project.issues }}</td>
-      <td>{{ project.risk }}</td>
+    <tr [ngStyle]="{ 'background-color': '#4F3F3F' }">
+      <td>Cabin Services</td>
+      <td>IBC RE Tool Modification</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Jan-15</td>
+      <td>Jun-30</td>
+      <td>90</td>
+      <td><span [class]="'risk-badge high'">High</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#313435' }">
+      <td></td>
+      <td>New Flight Operations System</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Oct-01</td>
+      <td>May-01</td>
+      <td>10</td>
+      <td>Low</td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td></td>
+      <td>Baggage Handling Improvement Initiative</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Apr-05</td>
+      <td>Sep-15</td>
+      <td>20</td>
+      <td>Low</td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#313435' }">
+      <td>Cargo</td>
+      <td>Safety Management System Update</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Mar-10</td>
+      <td>Jul-20</td>
+      <td>30</td>
+      <td>Low</td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td></td>
+      <td>Employee Training And Development Plan</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Jun-01</td>
+      <td>Oct-01</td>
+      <td>40</td>
+      <td>Med</td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#313435' }">
+      <td></td>
+      <td>Passenger Experience Optimization</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>May-20</td>
+      <td>Aug-30</td>
+      <td>40</td>
+      <td>Med</td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td>Engineering And Corporate Safety</td>
+      <td>Onboard Service Quality Assessment</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Jul-15</td>
+      <td>Dec-01</td>
+      <td>30</td>
+      <td>Low</td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#313435' }">
+      <td></td>
+      <td>Aircraft Maintenance Tracking System</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Dec-01</td>
+      <td>Jun-01</td>
+      <td>30</td>
+      <td>Low</td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td>Finance</td>
+      <td>Marketing Campaign For Frequent Flyers</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Aug-10</td>
+      <td>Nov-30</td>
+      <td>30</td>
+      <td>Low</td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#4F3F3F' }">
+      <td></td>
+      <td>In-Flight Connectivity Enhancement</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Sep-01</td>
+      <td>Jan-15</td>
+      <td>80</td>
+      <td><span [class]="'risk-badge high'">High</span></td>
+    </tr>
+    <tr [ngStyle]="{ 'background-color': '#3F4445' }">
+      <td></td>
+      <td>Cargo Operations Performance Review</td>
+      <td>50%</td>
+      <td>50%</td>
+      <td>Sep-20</td>
+      <td>Mar-15</td>
+      <td>10</td>
+      <td>Low</td>
     </tr>
   </tbody>
 </table>
