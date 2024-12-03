@@ -53,6 +53,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.pageInterval = setInterval(() => {
       this.currentPage = (this.currentPage + 1) % 3;
       this.currentPageProjects = this.projects[this.currentPage];
-    }, 10000);
+    }, 10);
   }
 }
