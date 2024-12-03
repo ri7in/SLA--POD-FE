@@ -6,21 +6,6 @@
       <div class="card-face front" *ngIf="currentView === 'front'">
         <h3>MILESTONES</h3>
         <div class="circle-progress">
-          <svg viewBox="0 0 36 36">
-            <path d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#444"
-              stroke-width="3"/>
-            <path d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#4CAF50"
-              stroke-width="3"
-              [attr.stroke-dasharray]="getCircleProgress(50)"/>
-          </svg>
           <div class="circle-value">50%</div>
           <div class="circle-label">Completed</div>
         </div>
@@ -28,21 +13,6 @@
       <div class="card-face back" *ngIf="currentView === 'back'">
         <h3>MILESTONES</h3>
         <div class="circle-progress">
-          <svg viewBox="0 0 36 36">
-            <path d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#444"
-              stroke-width="3"/>
-            <path d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#4CAF50"
-              stroke-width="3"
-              [attr.stroke-dasharray]="getCircleProgress(70)"/>
-          </svg>
           <div class="circle-value">70%</div>
           <div class="circle-label">Completed</div>
         </div>
@@ -54,21 +24,6 @@
       <div class="card-face front" *ngIf="currentView === 'front'">
         <h3>DELIVERABLES</h3>
         <div class="circle-progress">
-          <svg viewBox="0 0 36 36">
-            <path d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#444"
-              stroke-width="3"/>
-            <path d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#4CAF50"
-              stroke-width="3"
-              [attr.stroke-dasharray]="getCircleProgress(30)"/>
-          </svg>
           <div class="circle-value">30%</div>
           <div class="circle-label">Completed</div>
         </div>
@@ -76,21 +31,6 @@
       <div class="card-face back" *ngIf="currentView === 'back'">
         <h3>DELIVERABLES</h3>
         <div class="circle-progress">
-          <svg viewBox="0 0 36 36">
-            <path d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#444"
-              stroke-width="3"/>
-            <path d="M18 2.0845
-              a 15.9155 15.9155 0 0 1 0 31.831
-              a 15.9155 15.9155 0 0 1 0 -31.831"
-              fill="none"
-              stroke="#4CAF50"
-              stroke-width="3"
-              [attr.stroke-dasharray]="getCircleProgress(50)"/>
-          </svg>
           <div class="circle-value">50%</div>
           <div class="circle-label">Completed</div>
         </div>
@@ -98,35 +38,27 @@
     </div>
 
     <!-- Tasks Completed Section -->
-    <div class="tasks-section">
-      <h3>TASKS COMPLETED</h3>
-      <div class="tasks-list" [@flipCard]="currentView">
-        <div class="task-item" *ngIf="currentView === 'front'">
-          <div class="task-name">IBC RE Tool Modification</div>
-          <div class="task-progress">
-            <div class="progress-bar">
-              <div class="progress-fill" [style.width]="'100%'"></div>
-            </div>
-            <span class="progress-text">100% (3/3)</span>
-          </div>
+    <div class="task-completed">
+      <h3>Tasks Completed</h3>
+    
+      <div class="task-item">
+        <p>IBC RE Tool Modification</p>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 100%;">100%</div>
         </div>
-        <div class="task-item" *ngIf="currentView === 'front'">
-          <div class="task-name">New Flight Operations System</div>
-          <div class="task-progress">
-            <div class="progress-bar">
-              <div class="progress-fill" [style.width]="'50%'"></div>
-            </div>
-            <span class="progress-text">50% (15/30)</span>
-          </div>
+      </div>
+    
+      <div class="task-item">
+        <p>New Flight Operations System</p>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 50%;">50%</div>
         </div>
-        <div class="task-item" *ngIf="currentView === 'front'">
-          <div class="task-name">Baggage Handling Improvement Initiative</div>
-          <div class="task-progress">
-            <div class="progress-bar">
-              <div class="progress-fill" [style.width]="'10%'"></div>
-            </div>
-            <span class="progress-text">10% (9/90)</span>
-          </div>
+      </div>
+    
+      <div class="task-item">
+        <p>Baggage Handling Improvement Initiative</p>
+        <div class="progress-bar-container">
+          <div class="progress-bar high-risk" style="width: 10%;">10%</div>
         </div>
       </div>
     </div>
