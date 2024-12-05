@@ -48,7 +48,7 @@ export class StatisticsCardsComponent implements OnInit, OnDestroy {
 
   // Method to calculate conic gradient for circle progress
   calculateConicGradient(percentage: number): string {
-    return `conic-gradient(#4CAF50 0% ${percentage}%, #333 ${percentage}% 100%)`;
+    return `conic-gradient(#4CAF50 0% ${percentage}%, #7C7C7C ${percentage}% 100%)`;
   }
 
   ngOnInit() {
