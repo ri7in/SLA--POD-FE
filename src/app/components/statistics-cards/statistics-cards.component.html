@@ -4,16 +4,16 @@
     <!-- Milestones Card -->
     <div class="stat-card" [@flipCard]="currentView">
       <div class="card-face front" *ngIf="currentView === 'front'">
-        <h3>MILESTONES</h3>
-        <div class="circle-progress">
-          <div class="circle-value">50%</div>
+        <h3>{{ milestones.title }}</h3>
+        <div class="circle-progress" [style.background]="calculateConicGradient(milestones.frontPercentage)">
+          <div class="circle-value">{{ milestones.frontPercentage }}%</div>
           <div class="circle-label">Completed</div>
         </div>
       </div>
       <div class="card-face back" *ngIf="currentView === 'back'">
-        <h3>MILESTONES</h3>
-        <div class="circle-progress">
-          <div class="circle-value">70%</div>
+        <h3>{{ milestones.title }}</h3>
+        <div class="circle-progress" [style.background]="calculateConicGradient(milestones.backPercentage)">
+          <div class="circle-value">{{ milestones.backPercentage }}%</div>
           <div class="circle-label">Completed</div>
         </div>
       </div>
@@ -22,16 +22,16 @@
     <!-- Deliverables Card -->
     <div class="stat-card" [@flipCard]="currentView">
       <div class="card-face front" *ngIf="currentView === 'front'">
-        <h3>DELIVERABLES</h3>
-        <div class="circle-progress">
-          <div class="circle-value">30%</div>
+        <h3>{{ deliverables.title }}</h3>
+        <div class="circle-progress" [style.background]="calculateConicGradient(deliverables.frontPercentage)">
+          <div class="circle-value">{{ deliverables.frontPercentage }}%</div>
           <div class="circle-label">Completed</div>
         </div>
       </div>
       <div class="card-face back" *ngIf="currentView === 'back'">
-        <h3>DELIVERABLES</h3>
-        <div class="circle-progress">
-          <div class="circle-value">50%</div>
+        <h3>{{ deliverables.title }}</h3>
+        <div class="circle-progress" [style.background]="calculateConicGradient(deliverables.backPercentage)">
+          <div class="circle-value">{{ deliverables.backPercentage }}%</div>
           <div class="circle-label">Completed</div>
         </div>
       </div>
@@ -45,6 +45,7 @@
         <p>IBC RE Tool Modification</p>
         <div class="progress-bar-container">
           <div class="progress-bar" style="width: 100%;">100%</div>
+        <div class="tasks">3/3</div>
         </div>
       </div>
     
@@ -52,6 +53,7 @@
         <p>New Flight Operations System</p>
         <div class="progress-bar-container">
           <div class="progress-bar" style="width: 50%;">50%</div>
+          <div class="tasks">3/3</div>
         </div>
       </div>
     
@@ -59,6 +61,8 @@
         <p>Baggage Handling Improvement Initiative</p>
         <div class="progress-bar-container">
           <div class="progress-bar high-risk" style="width: 10%;">10%</div>
+          <div class="tasks">3/3</div>
+
         </div>
       </div>
     </div>

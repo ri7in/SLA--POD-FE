@@ -51,13 +51,54 @@ h3 {
 .circle-progress {
   width: 180px;
   height: 180px;
-  border-radius: 50%; /* Ensures it's perfectly circular */
-  border: 20px solid #4CAF50;
+  border-radius: 50%;
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   margin: 0 auto;
+  
+  // Base background circle
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  // Inner white circle
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    border-radius: 50%;
+    background: #3F4445;
+    z-index: 2;
+  }
+}
+
+.circle-value {
+  position: relative;
+  z-index: 3;
+  font-size: 24px;
+  font-weight: bold;
+  color: #E0E0E0;
+}
+
+.circle-label {
+  position: relative;
+  z-index: 3;
+  color: #E0E0E0;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 svg {
@@ -66,24 +107,7 @@ svg {
   transform: rotate(-90deg);
 }
 
-.circle-value {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  font-weight: bold;
-  color: #E0E0E0;
-}
 
-.circle-label {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #E0E0E0;
-  font-size: 14px;
-}
 
 .task-completed {
   background-color: #3F4445;
@@ -105,18 +129,19 @@ svg {
 
 .progress-bar-container {
   background-color: #474C4D;
-  height: 20px;
+  height: 25px;
   position: relative;
   margin-top: 5px;
+  width: 100%;
 }
 
 .progress-bar {
-  background-color: #4caf50;
+  background-color: #4CAF50;
   height: 100%;
 }
 
 .high-risk {
-  background-color: red;
+  background-color: #974545;
 }
 
 span {
@@ -124,6 +149,7 @@ span {
   color: #555;
   margin-left: 8px;
 }
+
 .progress-text {
   position: absolute;  /* Positions the text within the container */
   top: 0;              /* Aligns it vertically at the top */
@@ -131,5 +157,14 @@ span {
   font-size: 12px;     /* Ensures the text is smaller and subtle */
   color: #555;         /* Light gray color for contrast */
   line-height: 20px;   /* Keeps it vertically aligned with the bar height */
-  font-weight: bold;   /* Makes the text stand out a bit */
+  font-weight: bold;    /* Makes the text stand out a bit */
+}
+
+.tasks {
+  position: absolute;
+  right: 10px;  /* Move to the right edge with some margin */
+  top: 3px;    /* Adjust this value to move the text slightly up */
+  font-size: 14px;
+  font-weight: 400;
+  color: #E0E0E0;
 }

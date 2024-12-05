@@ -5,21 +5,27 @@ table {
   background: #2a2a2a;
   border-radius: 8px;
   overflow: hidden;
-  margin: 20px 0;
+  margin:0 0;
 }
 
 th {
   background: #2e2e2e;
   color: #FFFACD;
-  padding: 15px;
+  padding: 15px 5px 15px 15px; /* Keep the padding consistent */
+  padding-top: 0px;
   text-align: left;
   font-weight: 600;
   font-size: 22px;
+  
 }
 
 td {
   padding: 9px 15px;
   border-bottom: 1px solid #444;
+  font-size: 18px;
+  color: #E0E0E0;
+  text-transform: uppercase;  /* Make text all uppercase */
+
 }
 
 tr:last-child td {
@@ -54,14 +60,12 @@ tr:last-child td {
 }
 
 .risk-badge {
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: bold;
-
+  padding: 9px 8px;
+  font-size: 18px;
+  font-weight: 400;
   &.high {
-    background: #f44336;
-    color: white;
+    background: #852E2E;
+    color: #E0E0E0;
   }
 
   &.med {
