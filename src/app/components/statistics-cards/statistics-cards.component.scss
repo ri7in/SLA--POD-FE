@@ -1,45 +1,174 @@
-.statistics-card {
-  width: 300px;
-  padding: 15px;
-  background-color: #2c2c2c; /* Dark background for the card */
-  color: #e0e0e0; /* Light text color */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  text-align: center;
-  margin-top: 30px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.statistics-card h3 {
-  color: #007bff; /* Blue text for the header */
-  font-size: 1.5rem;
+.statistics-section {
+  background-color: #2E2E2E;
+  padding: 20px;
+  border: 5px solid #3F4445;
+  max-height: 92%;
+  //margin-top: 1%;
+}
+
+h2 {
+  color: #FFFACD;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: -15px;  /* Move the h2 up by 5px */
+
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 1%; /* Ensures no gap between grid items */
+}
+
+.stat-card {
+  position: relative;
+  min-height: 200px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 95%;
+  margin-top: 1%;
+}
+
+.card-face {
+  background: #3F4445;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+h3 {
+  color: #E0E0E0;
+  font-size: 22px;
+  font-weight: 200;
+  margin-bottom: 2%;
+}
+
+
+.circle-progress {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  
+  // Base background circle
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  // Inner white circle
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    border-radius: 50%;
+    background: #3F4445;
+    z-index: 2;
+  }
+}
+
+.circle-value {
+  position: relative;
+  z-index: 3;
+  font-size: 24px;
+  font-weight: bold;
+  color: #E0E0E0;
+}
+
+.circle-label {
+  position: relative;
+  z-index: 3;
+  color: #E0E0E0;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+
+
+.task-completed {
+  background-color: #3F4445;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 95%;
+}
+
+.task-item {
   margin-bottom: 10px;
 }
 
-.card-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.task-item p {
+  color: #e0e0e0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.front,
-.back {
+.progress-bar-container {
+  background-color: #474C4D;
+  height: 25px;
+  position: relative;
+  margin-top: 5px;
   width: 100%;
-  padding: 10px;
-  display: block;
 }
 
-.front {
-  display: block;
+.progress-bar {
+  background-color: #4CAF50;
+  height: 100%;
 }
 
-.back {
-  display: none;
+.high-risk {
+  background-color: #974545;
 }
 
-.statistics-card:hover .back {
-  display: block;
+span {
+  font-size: 14px;
+  color: #555;
+  margin-left: 8px;
 }
 
-.statistics-card:hover .front {
-  display: none;
+.progress-text {
+  position: absolute;  /* Positions the text within the container */
+  top: 0;              /* Aligns it vertically at the top */
+  right: 8px;          /* Pushes the text to the right */
+  font-size: 12px;     /* Ensures the text is smaller and subtle */
+  color: #555;         /* Light gray color for contrast */
+  line-height: 20px;   /* Keeps it vertically aligned with the bar height */
+  font-weight: bold;    /* Makes the text stand out a bit */
 }
+
+.tasks {
+  position: absolute;
+  right: 10px;  /* Move to the right edge with some margin */
+  top: 3px;    /* Adjust this value to move the text slightly up */
+  font-size: 14px;
+  font-weight: 400;
+  color: #E0E0E0;
+}
+
